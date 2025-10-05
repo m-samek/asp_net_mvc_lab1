@@ -1,0 +1,15 @@
+﻿@model IEnumerable<asp_net_mvc_lab1.Models.BlogArticleViewModel>
+
+<div class="text-center">
+    <h1 class="display-4">Blog Artciles</h1>
+</div>
+
+<ul class="list-group mt-4">
+    @foreach (var article in Model)
+    {
+        <li class="list-group-item">
+            <a asp-controller="Blog" asp-action="Article" asp-route-id="@article.Id">@article.Title</a>
+            <p class="mb-1 text-muted">@article.Description</p>
+        </li>
+    }
+</ul>
